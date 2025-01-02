@@ -42,7 +42,7 @@ task.spawn(function()
     while true do
         for _, Item in pairs(getgenv().LuckBoosts) do
             task.wait()
-            if (not table.find(Cats, Item)) or LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
+            if LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data")
                     :WaitForChild("EquipItem"):InvokeServer(Item)
                 print(Item .. " used")
