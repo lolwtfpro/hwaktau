@@ -123,9 +123,12 @@ if MissionItems:FindFirstChild("Civilian") then
 end
 task.wait(1)
 end
+local s, e = pcall(function()
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/gagaagagaga.lua"))()')()
+end)
 
---wait(10)
---fireproximityprompt(Replay)
+wait(10)
+Click(Replay)
 
 
 --for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Drops"):GetChildren()) do
