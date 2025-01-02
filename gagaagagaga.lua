@@ -57,7 +57,17 @@ task.spawn(function()
                 Click(Flip)
             until not LootUI.Enabled
         end
-        task.wait(1)
+        task.wait(0.2)
+    end
+end)
+
+task.spawn(function()
+    while true do
+        local VIM = game:GetService("VirtualInputManager")
+        VIM:SendKeyEvent(true, 104, false, game)
+        task.wait()
+        VIM:SendKeyEvent(false, 104, false, game)
+        task.wait()
     end
 end)
 
@@ -97,7 +107,7 @@ end
 
 if MissionItems:FindFirstChild("Civilian") then
     for i, v in pairs(MissionItems:GetChildren()) do
-        if v.Name == "Civilian" then
+        if v.Name == "Civilian" and v:FindFirstChild("HumanoidRootPart") then
             LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
             task.wait(1)
             if v:FindFirstChild("PickUp") then
