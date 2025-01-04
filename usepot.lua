@@ -1,4 +1,4 @@
-task.wait(20)
+task.wait(10)
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data"):WaitForChild("EquipItem"):InvokeServer("Luck Vial")
 local s, e = pcall(function()
