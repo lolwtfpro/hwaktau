@@ -93,7 +93,7 @@ task.spawn(function()
 end)
 while(not LocalPlayer.PlayerGui:WaitForChild("Results").Enabled) do
     for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Mobs"):GetChildren()) do
-        if v:FindFirstChild("Humanoid") then
+        if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("HumanoidRootPart").CFrame then
             v:FindFirstChild("Humanoid").Health = 0
             --tween(v:FindFirstChild("HumanoidRootPart").CFrame)
             LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
@@ -147,7 +147,7 @@ Click(Replay)
 task.wait(1)
 end
 
- 
+
 --for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Drops"):GetChildren()) do
 --    if v.Name == "Chest" then
 --        fireproximityprompt(v:FindFirstChild("Collect"))
