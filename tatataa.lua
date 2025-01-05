@@ -58,7 +58,7 @@ task.spawn(function()
                 Click(Flip)
             until not LootUI.Enabled
         end
-        Click(LocalPlayer.PlayerGui.WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
+        Click(LocalPlayer.PlayerGui:WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
         task.wait(0.2)
     end
 end)
