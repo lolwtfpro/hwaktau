@@ -40,6 +40,7 @@ local function Click(Button)
 end
 task.spawn(function()
     while true do
+        
         --for _, Item in pairs(getgenv().LuckBoosts) do
         --    task.wait()
         --    if LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
@@ -57,6 +58,7 @@ task.spawn(function()
                 Click(Flip)
             until not LootUI.Enabled
         end
+        Click(LocalPlayer.PlayerGui.WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
         task.wait(0.2)
     end
 end)
@@ -85,15 +87,26 @@ local function tween(pos)
     Tween.Completed:Wait()
     task.wait()
 end
+task.spawn(function()
+    task.wait(10)
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data"):WaitForChild("EquipItem"):InvokeServer("Luck Vial")
+end)
 while(not LocalPlayer.PlayerGui:WaitForChild("Results").Enabled) do
-for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Mobs"):GetChildren()) do
-    if v:FindFirstChild("Humanoid") then
-        v:FindFirstChild("Humanoid").Health = 0
-        --tween(v:FindFirstChild("HumanoidRootPart").CFrame)
-        LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
-        task.wait(0.2)
+    for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Mobs"):GetChildren()) do
+        if v:FindFirstChild("Humanoid") then
+            v:FindFirstChild("Humanoid").Health = 0
+            --tween(v:FindFirstChild("HumanoidRootPart").CFrame)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
+            task.wait(0.2)
+            for i = 0, 10, 1 do
+                game:GetService("ReplicatedStorage").Remotes.Server.Combat.M1:FireServer(1, {v:FindFirstChild("Humanoid")})
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("Humanoid"):FindFirstChild("Health") then
+                    v:FindFirstChild("Humanoid").Health = 0
+                end
+                task.wait()
+            end
+        end
     end
-end
 
 if MissionItems:FindFirstChild("CursedObject") then
     for i, v in pairs(MissionItems:GetChildren()) do
@@ -124,7 +137,7 @@ end
 task.wait(1)
 end
 local s, e = pcall(function()
-    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/tatataa.lua"))()')()
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/tatatazzza.lua"))()')()
 end)
 
 task.wait(20)
