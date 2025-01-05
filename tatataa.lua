@@ -147,7 +147,7 @@ Click(Replay)
 task.wait(1)
 end
 
-
+ 
 --for i, v in pairs(game:GetService("Workspace"):FindFirstChild("Objects"):FindFirstChild("Drops"):GetChildren()) do
 --    if v.Name == "Chest" then
 --        fireproximityprompt(v:FindFirstChild("Collect"))
