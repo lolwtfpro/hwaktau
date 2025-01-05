@@ -41,14 +41,14 @@ end
 task.spawn(function()
     while true do
         
-        --for _, Item in pairs(getgenv().LuckBoosts) do
-        --    task.wait()
-        --    if LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
-        --        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data")
-        --            :WaitForChild("EquipItem"):InvokeServer(Item)
-        --        print(Item .. " used")
-        --    end
-        --end
+        for _, Item in pairs(getgenv().LuckBoosts) do
+            task.wait()
+            if LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data")
+                    :WaitForChild("EquipItem"):InvokeServer(Item)
+                print(Item .. " used")
+            end
+        end
         if not LootUI.Enabled then
             if Drops:FindFirstChild("Chest") and Drops:FindFirstChild("Chest"):FindFirstChild("Collect") then
                 fireproximityprompt(Drops:FindFirstChild("Chest"):FindFirstChild("Collect"))
@@ -57,6 +57,11 @@ task.spawn(function()
             repeat
                 Click(Flip)
             until not LootUI.Enabled
+        end
+        if LocalPlayer.ReplicatedData:WaitForChild("inventory"):FindFirstChild("White Lotus") then
+            if LocalPlayer.ReplicatedData:WaitForChild("inventory"):FindFirstChild("White Lotus").Value > 20 then
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data"):WaitForChild("EquipItem"):InvokeServer("White Lotus")
+            end
         end
         Click(LocalPlayer.PlayerGui:WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
         task.wait(0.2)
