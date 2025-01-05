@@ -99,7 +99,7 @@ while(not LocalPlayer.PlayerGui:WaitForChild("Results").Enabled) do
             LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
             task.wait(0.2)
             for i = 0, 10, 1 do
-                game:GetService("ReplicatedStorage").Remotes.Server.Combat.M1:FireServer(1, {v:FindFirstChild("Humanoid")})
+                --game:GetService("ReplicatedStorage").Remotes.Server.Combat.M1:FireServer(1, {v:FindFirstChild("Humanoid")})
                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("Humanoid"):FindFirstChild("Health") then
                     v:FindFirstChild("Humanoid").Health = 0
                 end
@@ -137,7 +137,7 @@ end
 task.wait(1)
 end
 local s, e = pcall(function()
-    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/tatatazzza.lua"))()')()
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/tatataa.lua"))()')()
 end)
 
 task.wait(20)
