@@ -10,7 +10,7 @@ MouseTarget.Position = UDim2.new(0.5, 0, 0.5, 0)
 MouseTarget.AnchorPoint = Vector2.new(0.5, 0.5)
 local X, Y = MouseTarget.AbsolutePosition.X, MouseTarget.AbsolutePosition.Y
 
-getgenv().LuckBoosts = {"Luck Vial","Wooden Beckoning Cat"}
+getgenv().LuckBoosts = {"Wooden Beckoning Cat"}
 local Cats = {"Withered Beckoning Cat", "Wooden Beckoning Cat", "Polished Beckoning Cat"}
 local Objects = workspace:WaitForChild("Objects")
 local Mobs = Objects:WaitForChild("Mobs")
