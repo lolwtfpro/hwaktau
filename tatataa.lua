@@ -63,7 +63,7 @@ task.spawn(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data"):WaitForChild("EquipItem"):InvokeServer("White Lotus")
             end
         end
-        Click(LocalPlayer.PlayerGui:WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
+        --Click(LocalPlayer.PlayerGui:WaitForChild("StorylineDialogue"):WaitForChild("Frame"):WaitForChild("Dialogue"):WaitForChild("Skip"))
         task.wait(0.2)
     end
 end)
