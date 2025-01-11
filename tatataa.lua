@@ -139,7 +139,7 @@ if MissionItems:FindFirstChild("Civilian") then
         end
     end
 end
-task.wait(1)
+task.wait(0.2)
 end
 local s, e = pcall(function()
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/lolwtfpro/hwaktau/refs/heads/main/tatataa.lua"))()')()
