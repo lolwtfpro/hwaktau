@@ -101,7 +101,7 @@ while(not LocalPlayer.PlayerGui:WaitForChild("Results").Enabled) do
         if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("HumanoidRootPart").CFrame then
             v:FindFirstChild("Humanoid").Health = 0
             --tween(v:FindFirstChild("HumanoidRootPart").CFrame)
-            LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame
+            LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 20, 0)
             task.wait(0.2)
             for i = 0, 10, 1 do
                 --game:GetService("ReplicatedStorage").Remotes.Server.Combat.M1:FireServer(1, {v:FindFirstChild("Humanoid")})
