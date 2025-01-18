@@ -49,6 +49,10 @@ task.spawn(function()
                 print(Item .. " used")
             end
         end
+        task.wait()
+        if LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data"):WaitForChild("EquipItem"):InvokeServer("Withered Beckoning Cat")
+        end
         if not LootUI.Enabled then
             if Drops:FindFirstChild("Chest") and Drops:FindFirstChild("Chest"):FindFirstChild("Collect") then
                 fireproximityprompt(Drops:FindFirstChild("Chest"):FindFirstChild("Collect"))
