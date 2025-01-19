@@ -1,3 +1,4 @@
+task.wait(10)
 local LocalPlayer = game:GetService("Players").LocalPlayer
 repeat
     task.wait()
