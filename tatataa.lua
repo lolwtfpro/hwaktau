@@ -1,6 +1,9 @@
 local LocalPlayer = game:GetService("Players").LocalPlayer
 repeat
     task.wait()
+until LocalPlayer
+repeat
+    task.wait()
 until LocalPlayer.Character
 
 -- Uh, ignore this spaghetti way of determining screen center
